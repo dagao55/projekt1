@@ -1,0 +1,422 @@
+#palindrom
+def palindrom(health_points):
+    print("\n\n\t\t\t---------------MINIGRA---------------\n\n")
+    import random
+    print("Masz wrażenie, że maszyna zaraz huknie. Zauważasz, że pojawia się polecenie: ")
+    i = 0
+    limit = random.randint(3,5)
+    print("Masz ", limit,"prób")
+    while i != limit:
+        palindromy = input("Podaj zdanie: ").lower().replace(" ", "")
+        if palindromy == palindromy[::-1]:
+            print("Tak, to jest palindrom!")
+            i += 1
+        else:
+            print("To nie jest palindrom!")
+            health_points -= 1
+    return health_points
+
+
+
+
+
+
+
+#cytaty
+def quotes(workplace):
+    print("\n\n\t\t\t---------------MINIGRA---------------\n\n")
+    if workplace == "szkoła":
+        print("\n\nZawsze podziwiałeś ideę, żeby uczniowie w trakcie przerwy mogli tak ambitnie spędzić czas! Gra w \'kto to powiedział\' czy \'jak to leciało\' jest czymś naprawdę ekstra!")
+
+    elif workplace == "siłownia":
+        print("\n\nNie masz pojęcia skąd i dlaczego taka maszyna się tutaj znajduje, ale cóż, nie narzekasz. Może niektórzy po ćwiczeniach lubią zażyć trochę lekcji... klasyki.")
+
+    elif workplace == "teatr":
+        print("Maszyna pasuje tu jak ulał! Nieco wyróżnia się z panujacego tu stylu, ale treść gier \'kto to powiedział\' czy \'jak to leciało\' zdecydowanie się nie wyróżnia.")
+
+    print("Zaczynamy grę! W jak najkrótszym czasie, odpowiedz jak najlepiej! Zobaczysz cytat, będziesz musiał zaznaczyć postać, która go wypowiedziała. Do dzieła!")
+
+    i = 0
+    while i != 6:
+        p = 0
+        import time
+
+        start = time.time()
+
+        print("\'Zabierają Hobbitów do Isengardu!\'"
+              "\n1- Legolas"
+              "\n2- Luke Skywalker"
+              "\n3- Gandalf")
+        a = int(input("Kto to powiedział? Wpisz numer. "))
+        i += 1
+        if a == 1:
+            p += 1
+
+        else:
+            p += 0
+
+
+
+        print("\n\n\'Kiedy byłem jeszcze ledwie wyrostkiem,"
+              "mój dziadek Szparki ptak...\'"
+              "\n1- Ranger"
+              "\n2- Jack"
+              "\n3- Abahachi")
+        b = int(input("Kto to powiedział? Wpisz numer. "))
+        i += 1
+
+        if b == 3:
+            p += 1
+
+        else:
+            p += 0
+
+
+        print("\n\n\'Jeśli nie chcesz mojej zguby, "
+              "Krokodyla daj mi luby!\'"
+              "\n1- Papkin"
+              "\n2- Telimena"
+              "\n3- Klara")
+        c = int(input("Kto to powiedział? Wpisz numer. "))
+        i += 1
+
+        if c == 1:
+            p += 1
+
+        else:
+            p += 0
+
+
+
+        print("\n\n\'Byłeś wybrańcem!\'"
+              "\n1- Darth Vader"
+              "\n2- Tyrion Lannister"
+              "\n3- Obi-Wan Kenobi")
+        d = int(input("Kto to powiedział? Wpisz numer. "))
+        i += 1
+
+        if d == 3:
+            p += 1
+
+        else:
+            p += 0
+
+
+
+        print("\n\n\'W grze o tron zwycięża się albo umiera.\'"
+              "\n1- Cersei Lannister"
+              "\n2- Sansa Stark"
+              "\n3- Daenerys Targaryen")
+        e = int(input("Kto to powiedział? Wpisz numer. "))
+        i += 1
+
+        if e == 1:
+            p += 1
+
+        else:
+            p += 0
+
+
+
+        print("\n\n\'Lambert, Lambert, ty...\'"
+              "\n1- Triss Merigold"
+              "\n2- Gerlat z Rivii"
+              "\n3- Vesemir")
+        f = int(input("Kto to powiedział? Wpisz numer. "))
+        i += 1
+
+        if f == 2:
+            p += 1
+
+        else:
+            p += 0
+
+
+
+        end = time.time()
+        elapsed = end - start
+        print(i)
+        print("Zdobyłeś ", p, "punktów na 6 możliwych! Rozwiązanie zagadek zajęło Ci, ", round(elapsed,1),"sekund")
+        return
+
+#przepisywanie do pudełka pod koniec
+def rewriting():
+    print("\n\n\t\t\t---------------MINIGRA---------------\n\n")
+    print("\n\nJak tam miewa się Twój refleks? Masz okazję się sprawdzić! "
+          "\nZa chwilę wyświetli Ci się na ekranie tekst, który będziesz musiał przepisać. Bądź szybki!")
+    import time
+    start = time.time()
+    text1 = input("W Sępim jarze, przy Orlim głazie, pod starą sosną, gdzie gałąź rzuca cień wiewiórki.")
+    while text1 != "W Sępim jarze, przy Orlim głazie, pod starą sosną, gdzie gałąź rzuca cień wiewiórki.":
+        print("Spróbuj jeszcze raz!")
+        text1 = input("W Sępim jarze, przy Orlim głazie, pod starą sosną, gdzie gałąź rzuca cień wiewiórki.")
+
+    end = time.time()
+    elapsed = end - start
+    elapsed = round(elapsed,1)
+    return
+
+
+
+#szyfr
+def code():
+    print("\n\n\t\t\t---------------MINIGRA---------------\n\n")
+    import random
+    print(
+        "Prawdopodnie nie wiesz czemu ryś tak zęby szczerzy rad, może jednak uda Ci się złamać zaszyfrowaną wiadomość! Masz 10 szans.")
+    password = ["z", "i", "l", "n", "e", "m", "o", "r"]
+    answer = []
+    i = 0
+    limit = random.randint(13,15)
+    while i < limit:
+        letter = input("Zgadnij literę!")
+        i += 1
+        if letter in password:
+            print("Zgadza się!")
+            answer.append(letter)
+        else:
+            print("Źle, tej litery nie ma.")
+
+    print("Oto literki, które udało Ci się odgadnąć: ", answer)
+    finalAnswer = input("Jak brzmi rozwiązanie?")
+
+    i = 0
+    while finalAnswer != "zielone morze":
+        print("Źle, spróbuj jeszcze raz!")
+        i += 1
+        finalAnswer = input("Jak brzmi rozwiązanie?")
+        if i>2:
+            print("Podpowiedź - szmaragdowa, słona woda...")
+    print("Bingo!")
+    return
+
+
+#skojarzenia
+def associations(charisma):
+    print("\n\n\t\t\t---------------MINIGRA---------------\n\n")
+    print("Często myślę o niebieskich migdałach, ale nie tym razem! Zrobimy tak, podam Ci trzy słowa. Mam do nich wymyślone już antonimy. "
+          "Zobaczymy czy myślimy podobnie...")
+
+    associations = {"mały":["monumentalny", "ogromny","olbrzymi"],
+                    "woda": ["ogień", "stały ląd"],
+                    "choleryk":["flegamtyk", "osoba spokojna", "osoba flegmatyczna"],
+                    "słońce":["księżyc", "ciemność", "zaćmienie"]}
+    i = 0
+    for word in associations:
+        guess = input("Jaki antonim przychodzi Ci na myśl?\n{} ".format(word))
+        if guess in associations[word]:
+            print("Też tak myślę!")
+            i += 1
+        else:
+            print("Oj, to zdecydowanie nie mój pomysł...")
+
+    if i>3:
+        print("Super robota! Komuś chyba przybył punkt do charyzmy!")
+        charisma += 1
+    else:
+        print("Szkoda, że nie poszło Ci lepiej...Dodatkowy punkt za charyzmę przeszedł Ci koło nosa!")
+
+    return charisma
+
+
+def rockPaperScissors():
+    print("\n\n\t\t\t---------------MINIGRA---------------\n\n")
+    import random
+
+    print(
+        "Zagramy w papier, nożyce, kamień! Zasady są następujące - papier zbija kamień, nożyce zbijają papier, a kamień nożyce. Gra trwa do tzrech zwycięstw. Do dzieła!")
+    i = 0
+    j = 0
+    while not (i == 3 or j == 3):
+
+        choiceChar = int(input("Co wybierasz?"
+                               "\n1.Papier"
+                               "\n2.Kamień"
+                               "\n3.Nożyce\n"))
+        choiceEnem = random.randrange(1, 3)
+
+        if choiceChar == 1 and choiceEnem == 1:
+            print("Papier kontra Papier")
+            print("...")
+            print("Remis!")
+        elif choiceChar == 2 and choiceEnem == 2:
+            print("Kamień kontra Kamień")
+            print("...")
+            print("Remis!")
+        elif choiceChar == 3 and choiceEnem == 3:
+            print("Nożyce kontra Nożyce")
+            print("...")
+            print("Remis!")
+
+        if choiceChar == 1 and choiceEnem == 2:
+            print("Papier kontra Kamień")
+            print("...")
+            print("Wygrywasz!")
+            i += 1
+        elif choiceChar == 2 and choiceEnem == 3:
+            print("Kamień kontra Nożyce")
+            print("...")
+            print("Wygrywasz!")
+            i += 1
+        elif choiceChar == 3 and choiceEnem == 1:
+            print("Nożyce kontra Papier")
+            print("...")
+            print("Wygrywasz!")
+            i += 1
+
+        if choiceChar == 1 and choiceEnem == 3:
+            print("Papier kontra Nożyce")
+            print("Przegrywasz!")
+            j += 1
+        elif choiceChar == 2 and choiceEnem == 1:
+            print("Kamień kontra Papier")
+            print("Przegrywasz!")
+            j += 1
+        elif choiceChar == 3 and choiceEnem == 2:
+            print("Nożyce kontra Kamień")
+            print("Przegrywasz!")
+            j += 1
+
+    if i == 3:
+        print("\n\nZwycięzyłeś w tej potyczce!")
+    elif j == 3:
+        print("\n\nNiestety, przegrałeś...")
+
+
+    return
+
+
+#zgdanij liczbę
+def guessNumber():
+    print("\n\n\t\t\t---------------MINIGRA---------------\n\n")
+    print("Widzisz jak czas nieubłaganie ucieka. Też chciałbyś uciec, ale wolisz nie ryzykowć... Dasz radę, poradzisz sobie i z tym zadaniem! Musisz tylko dobrze zgadnąć liczbę. Z zakresu 0-100...")
+    print("Masz 8 prób i 40 sekund, żeby się uwolnić!")
+    import random
+    import time
+    import sys
+    number = random.randint(0, 100)
+
+    answer = ""
+    start = time.time()
+    i = 0
+    while answer != number:
+        answer = int(input("Podaj liczbę: "))
+        i += 1
+        if answer == number and i<=5:
+            print("Udało się!")
+        elif answer < number and i<=5:
+            print("Spróbuj większą liczbę")
+
+        elif answer > number and i<=5:
+            print("Spróbuj mniejszą liczbę")
+
+    end = time.time()
+    elapsed = end - start
+    elapsed = round(elapsed,1)
+    print("Liczba prób: ", i)
+    print("Liczba sekund: ", elapsed)
+    if i<9 and elapsed<41:
+        print("Ufff, udało się! Możesz spokojnie zejść z miny!")
+        return
+    else:
+        print("Meh, to chyba nie Twój dzień. Przynajmniej nie musisz martwić się już porywaczami... Zacznij grę od nowa! ")
+        sys.exit()
+
+
+
+
+def mapCode():
+    print("\n\n\t\t\t---------------MINIGRA---------------\n\n")
+    key = "południe"
+    password = "2220162706181207"
+
+    print("Na mapie widzisz zapisany ciąg cyfr: ", password)
+    print("Hmmm, one coś muszą oznaczać... Zielone morze...")
+    '''
+    '''
+    import random
+    mapChoice = random.randint(1,4)
+    i = 0
+
+    while i<4:
+        choice = input("Którą część mapy chcesz zobaczyć? 1 - góra, 2 - dół,  3 - prawo, 4 - lewo, 5 - losowo  ")
+
+        if choice == '1' or mapChoice == '1':
+            print("1 - Tereny wydają się śliczne, ale już na pierwszy rzut oka widzisz, że nie ma tam nic zielonego...Próbuj dalej.")
+            i += 1
+        elif choice == '2' or mapChoice == '2':
+            print("2 - Hmmm, to wygląda dość obiecująco, widać gdzieniegdzie zieleń, ale podróż tam byłaby nizełą męczarnią... Może coś innego?")
+            i += 1
+        elif choice == '3' or mapChoice == '3':
+            print("3 -Intuicja podpowiada Ci, że to nie są te okolice. Bije stamtąd jakaś zła energia... Co dalej?")
+            i += 1
+        elif choice == '4' or mapChoice =='4':
+            print("4 - O! To dopiero zapowiada się obiecująco. Dojechać można nawet komunikacją miejską, a polan tam tyle, że na pewno coś się znajdzie!")
+            i += 1
+
+    print("\n\nPrzejrzałeś całą mapę i niby już wiesz, ale coś nie daje Ci spokoju. Mimo, że lewa strona mapy wygląda bardzo zachęcająco, nie możesz z czystym sumieniem postawić wszystkiego na to."
+              "Jest jeszcze ta dolna część... Niech to, chyba trzeba będzie złamać ten kod!")
+
+    print("Te cyfry... One na pewno w coś się układają. Na współrzędne Ci to nie wygląda. Bardziej na kod...")
+    answer = input("Jak brzmi odpowiedź?")
+    i = 0
+
+    while answer != key:
+        i += 1
+        print("Nie, to chyba nie to...")
+        answer = input("Jak brzmi odpowiedź")
+        if i ==1:
+            print("\nMoże trzeba jej jakoś podzielic?")
+            i += 1
+        elif i==2:
+            print("\nPodzielić po dwie...")
+            i += 1
+        elif i == 3:
+            print("\nDo czego te pary mogą się odwoływać?")
+            i += 1
+        elif i == 4:
+            print("\nMoże odwołują się do alfabetu?")
+            i += 1
+        elif i == 5:
+            print("\nTak, do alfabetu polskiego - z ogonkami.")
+            i += 1
+        elif i >= 6:
+            print("Każda para coś oznacza."
+                  "Odwołuje się do danej pozycji w alfabecie polskim."
+                  "Przyporządkuj je po prostu!")
+            i += 1
+
+    print("\n\nHa, czyli hasło to ", key,". W takim razie już mam pewność, że chodzi o dolną - południową część mapy. Tylko jak my tam dojedziemy...")
+    return
+
+
+# bingo
+def bingo():
+    print("\n\n\t\t\t---------------MINIGRA---------------\n\n")
+    import random
+    key = ["kot", "pies", "węgorz", "fenek", "ośmiornica", "bawoł", "sroka"]
+    print("Lista słów: ", key)
+    bingo = random.sample(key, 3)
+    wordsChoice1 = input("\n\nPodaj słowo z listy: ")
+    wordsChoice2 = input("Podaj słowo z listy: ")
+    wordsChoice3 = input("Podaj słowo z listy: ")
+    i = 0
+    while not (wordsChoice1 in bingo and wordsChoice2 in bingo and wordsChoice3 in bingo):
+        print("\nNie udało się, spróbuj znowu!")
+        i += 1
+        bingo = random.sample(key, 3)
+        wordsChoice1 = input("\n\nPodaj słowo z listy: ")
+        wordsChoice2 = input("Podaj słowo z listy: ")
+        wordsChoice3 = input("Podaj słowo z listy: ")
+        if i == 1:
+            key.remove("sroka")
+            key.remove("bawoł")
+            print("Lista słów została skrócona: ", key)
+
+        if i == 3:
+            key.remove("kot")
+            key.remove("pies")
+            print("Lista słów została skrócona: ", key)
+
+    print("Bingo!")
+    return
