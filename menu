@@ -1,0 +1,110 @@
+'''menu - ekwipunek, hp. nowa gra, wyjście, mapa'''
+action = ('otwórz', 'zamknij', 'włącz', 'wyłącz', 'użyj', 'daj','weź', 'idź', "podnieś")
+directions = ("północ","południe","wschód","zachód")
+equipment = ["jabłko", "latarka", "nóż", "identyfikator","dzida","haczyk z wędkowania"]
+def getInput(wantedAction : str):
+    choice = input("Co chcesz zrobić?")
+    while True:
+        #choice = input("Co chcesz zrobić?")
+        if choice.lower() == "idź":
+            if choice.lower() == "idź":
+                actionChoice = input("Dokąd chcesz pójść?")
+                while actionChoice not in directions or wantedAction != actionChoice:
+                    print("Wybierz inną drogę.")
+                    actionChoice = input("Jaką akcję chcesz wykonać?")
+                    comeBack = input("jeśli chcesz wrócić do podstawowej funkcji, wpisz: powrót")
+                    if comeBack == 'powrót':
+                        getInput()
+                #print("Jesteś w ", places3[wantedAction])
+                return
+
+        elif choice.lower() == "pomoc":
+            print("Oto możliwe komendy: idź, akcja, wybierz z ekwipunku, statystyki, menu")
+            comeBack = input("jeśli chcesz wrócić do podstawowej funkcji, wpisz: powrót")
+            if comeBack == 'powrót':
+                getInput()
+
+        elif choice.lower() == "akcja":
+            actionChoice = input("Jaką akcję chcesz wykonać?")
+            while actionChoice not in action or wantedAction != actionChoice:
+                print("Wybierz inną akcję.")
+                actionChoice = input("Jaką akcję chcesz wykonać?")
+            return
+
+        elif choice.lower() == "wybierz z ekwipunku":
+            equipmentChoice = input("Co chcesz wybrać z ekwipunku?")
+            while equipmentChoice not in equipment or wantedAction != equipmentChoice:
+                print("Wybierz inny przedmiot.")
+                equipmentChoice = input("Co chcesz wybrać z ekwipunku?")
+            return
+
+
+        elif choice.lower() == "statystyki":
+            from poziom1 import abilities
+#            print("Oto Twoje statystyki: ", abilities, health_points)
+
+        elif choice.lower() == "menu":
+            def menu():
+                from poziom1 import health_points
+                #from BG import equipment
+                print("Oto menu gry:")
+
+                print("--------------"
+                      "\n--- Menu ----"
+                      "\n--------------"
+                      "\n--Zapisz grę--"
+                      "\n--------------"
+                      "\n-- Nowa gra --"
+                      "\n--------------"
+                      "\n-- Ekwipunek --"
+                      "\n--------------"
+                      "\n--- Mapa ------"
+                      "\n--------------"
+                      )
+
+                menuChoice = input("Co chcesz zrobić?")
+                if menuChoice.lower() == "hp":
+                    print("Punkty życia: ", health_points)
+
+                elif menuChoice.lower() == "nowa gra":
+                    print("Rozpoczynasz nową grę")
+                    import poziom1
+                    poziom1
+
+                elif menuChoice.lower() == "zapisz grę":
+                    print("Zapisujesz grę.")
+                    from zapis import save
+                    save()
+                    return
+
+                elif menuChoice.lower() == "wczytaj grę":
+                    print("Wczytujesz grę.")
+                    from wczytanie import load
+
+                elif menuChoice.lower() == "ekwipunek":
+                    print("Oto twój ekwipunek: ")
+                    for item in equipment:
+                        print(item, end=" ")
+                    return
+
+
+
+                elif menuChoice.lower() == "wyjście":
+                    print("Opuszczasz grę.")
+                    import sys
+                    sys.exit()
+'''
+                elif menuChoice.lower() == "mapa":
+                    if characterLocation <6:
+                        print("Poziom pierwszy, lokacja numer: "characterLocation)
+                        print("Mapa dla poziomu pierwszego: ", places1)
+                    elif 5<characterLocation<11:
+                            print("Poziom drugi, lokacja numer: ", characterLocation)
+                            print("Mapa dla poziomu drugiego: ", places2)
+                    else:
+                        print("Poziom trzeci, lokacja numer: ", characterLocation)
+                        print("Mapa dla poziomu trzeciego: ", places3)
+                    
+'''
+
+            #menu()
