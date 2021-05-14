@@ -1,0 +1,14 @@
+import pickle
+
+def load():
+    f = open("zapis.dat", "rb")
+    name = pickle.load(f)
+    profession = pickle.load(f)
+    health_points = pickle.load(f)
+    abilities = pickle.load(f)
+    print(name)
+    print(profession)
+    print(health_points)
+    print(abilities)
+    #print(characterLocation)
+    f.close()
