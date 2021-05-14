@@ -1,0 +1,17 @@
+from poziom1 import name
+from poziom1 import profession
+from poziom1 import health_points
+from poziom1 import abilities
+from poziom1 import characterLocation
+
+import pickle
+
+def save():
+    f = open("zapis.dat","wb")
+    pickle.dump( name, f)
+    pickle.dump( profession, f)
+    pickle.dump( health_points, f)
+    pickle.dump( abilities, f)
+    pickle.dump(characterLocation, f)
+    f.close()
+
